@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+
+      <style>
+      .input {
+          display: block;
+      }
+      
+      textarea {
+          width: 100%;
+      }
+      </style>
+      
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+    <div class="input">
+        <textarea name='tags' id='tag' rows=5 ></textarea>
+    </div>
+    
+    <div class='input'>
+    <button id='submit'>Change Description</button>
+    </div>
+    
+    
+    <script>
+    $('#submit').click(function(){
+        var tag = $('#tag').val();
+        console.log(tag);
+        
+        google.script.run.setDescription(tag);
+        return false;
+    });
+    </script>
+  </body>
+</html>
